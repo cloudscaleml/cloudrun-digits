@@ -88,7 +88,7 @@ def main(run, data_path, output_path, log_path, layer_width, batch_size, epochs,
     model.compile(optimizer=Adam(learning_rate=0.001),
                 loss='sparse_categorical_crossentropy',
                 metrics=['accuracy'])
-
+    
     # callbacks
     logaml = AMLCallback(run)
     filename = datetime.now().strftime("%d.%b.%Y.%H.%M")
