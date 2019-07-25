@@ -26,5 +26,4 @@ class AMLCallback(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs=None):
         if not self.offline:
             for item in self.metrics:
-                if not item.lower.startswith('va'):
-                    self.run.log('epoch_{}'.format(item), logs[item])
+                self.run.log('epoch_{}'.format(item), logs[item])
